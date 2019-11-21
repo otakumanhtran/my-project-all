@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,24 +11,23 @@ namespace Study_Reactis_v1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PeopleController : ControllerBase
+    public class PeopleTestController : ControllerBase
     {
         private readonly DbStudyReactContext _context;
 
-        public PeopleController(DbStudyReactContext context)
+        public PeopleTestController(DbStudyReactContext context)
         {
             _context = context;
         }
 
-        // GET: api/People
+        // GET: api/PeopleTest
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> GetPeople()
         {
-            var people = await _context.People.ToListAsync();
-            return people;
+            return await _context.People.ToListAsync();
         }
 
-        // GET: api/People/5
+        // GET: api/PeopleTest/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> GetPerson(int id)
         {
@@ -43,7 +41,7 @@ namespace Study_Reactis_v1.Controllers
             return person;
         }
 
-        // PUT: api/People/5
+        // PUT: api/PeopleTest/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPerson(int id, Person person)
         {
@@ -73,7 +71,7 @@ namespace Study_Reactis_v1.Controllers
             return NoContent();
         }
 
-        // POST: api/People
+        // POST: api/PeopleTest
         [HttpPost]
         public async Task<ActionResult<Person>> PostPerson(Person person)
         {
@@ -83,7 +81,7 @@ namespace Study_Reactis_v1.Controllers
             return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
 
-        // DELETE: api/People/5
+        // DELETE: api/PeopleTest/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Person>> DeletePerson(int id)
         {
