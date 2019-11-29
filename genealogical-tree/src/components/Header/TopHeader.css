@@ -1,0 +1,47 @@
+#TOP-HEADER {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+#TOP-HEADER .logo-top-header {
+  width: 120px;
+  height: 100%;
+  float: left;
+  border-radius: 10px;
+}
+
+#TOP-HEADER .logo-top-header .image-logo-top-header {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  vertical-align: bottom;
+}
+
+#TOP-HEADER .separate-menu {
+  border-left: 1px solid #d8dadb;
+  width: 0px;
+  height: 100%;
+  float: left;
+  margin-left: 10px;
+}
+
+#TOP-HEADER .menu {
+  margin: 0px 0px 0px 10px;
+  padding: 0px;
+  line-height: 64px;
+  color: white;
+  background: #001529;
+  font-size: 1.17em;
+  display: inline-block;
+  width: calc(100% - 200px);
+}
+
+#TOP-HEADER .menu .menu-item {
+  border-radius: 10px;
+  margin-right: 1px;
+}
+
+#TOP-HEADER .menu .menu-item-right {
+  float: right;
+}

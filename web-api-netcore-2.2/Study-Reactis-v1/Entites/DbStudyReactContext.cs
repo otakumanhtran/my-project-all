@@ -13,5 +13,6 @@ namespace Study_Reactis_v1.Entites
         { }
 
         public DbSet<Person> People { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
