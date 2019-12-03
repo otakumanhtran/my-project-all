@@ -1,0 +1,16 @@
+.avatar-uploader > .ant-upload {
+  width: 100% !important;
+  min-height: 100px !important;
+}
+
+/* .wrapper {
+  height: 800px;
+} */
+/* .modal-box .scroll-custom {
+      max-height: 860px;
+      scroll-behavior: smooth;
+  } */
+
+.scrollbar {
+  overflow-y: scroll;
+}

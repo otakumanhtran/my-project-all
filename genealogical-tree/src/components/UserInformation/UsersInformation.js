@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./UsersInformation.css";
-import { List, Avatar, Button, Modal, Input } from "antd";
+import { List, Avatar, Button, Input } from "antd";
 import avatarUser from "./../../assets/images/user4.png";
 import avatarUserDisplay from "../../assets/images/user5.jpg";
+import ModalOfUser from "./ModalOfUser.js";
 
 const { Search } = Input;
 
@@ -126,20 +127,12 @@ class UsersInformation extends Component {
             </List.Item>
           )}
         />
-        <div>
-          <Modal
-            width="40%"
-            className="modal-box"
-            headStyle={{backgroundColor: 'rgba(255, 255, 255, 0.4)', border: 0 }}
-            title={<h2 style={{color:"#5488c7"}}>User Information</h2>}
-            visible={this.state.visible}
-            onOk={this.handleOk}
-            confirmLoading={this.state.confirmLoading}
-            onCancel={this.handleCancel}
-          >
-
-          </Modal>
-        </div>
+        <ModalOfUser
+          handleOk={this.handleOk}
+          confirmLoading={this.state.confirmLoading}
+          handleCancel={this.handleCancel}
+          visible={this.state.visible}
+        />
       </div>
     );
   }
