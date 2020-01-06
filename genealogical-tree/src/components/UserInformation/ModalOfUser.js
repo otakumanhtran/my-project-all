@@ -119,17 +119,20 @@ class ModalOfUser extends Component {
           confirmLoading={this.props.confirmLoading}
           onCancel={this.props.handleCancel}
         >
-          <Form className="ant-advanced-search-form scroll-custom">
+          <Form className="ant-advanced-search-form">
             <Collapse
-              className="wrapper"
               bordered={false}
-              defaultActiveKey={["1"]}
+              defaultActiveKey={["1", "2"]}
               expandIcon={({ isActive }) => (
                 <Icon type="caret-right" rotate={isActive ? 90 : 0} />
               )}
             >
               <Panel
-                header={<strong>Profile</strong>}
+                header={
+                  <strong>
+                    <Icon type="profile" /> Profile
+                  </strong>
+                }
                 key="1"
                 style={customPanelStyle}
               >
@@ -147,6 +150,12 @@ class ModalOfUser extends Component {
                       style={{ width: "95%" }}
                     >
                       <Input
+                        prefix={
+                          <Icon
+                            type="user"
+                            style={{ color: "rgba(0,0,0,.25)" }}
+                          />
+                        }
                         placeholder="User name"
                         defaultValue="Trần Đức Mạnh"
                       />
@@ -231,92 +240,87 @@ class ModalOfUser extends Component {
                 style={customPanelStyle}
               >
                 <Row>
-                  <Col>
+                  <Col span={12}>
                     <Form.Item {...formItemLayout} label="Email">
                       {this.fullNameFn(
                         <Input
                           prefix={
                             <Icon
-                              type="user"
+                              type="mail"
                               style={{ color: "rgba(0,0,0,.25)" }}
                             />
                           }
                         />
                       )}
                     </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
+                    <Form.Item {...formItemLayout} label="Phone">
                       {this.fullNameFn(
                         <Input
                           prefix={
                             <Icon
-                              type="user"
+                              type="phone"
                               style={{ color: "rgba(0,0,0,.25)" }}
                             />
                           }
                         />
                       )}
                     </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
+                  </Col>
+                  <Col span={12}>
+                    <Form.Item {...formItemLayout} label="Address">
                       {this.fullNameFn(
                         <Input
                           prefix={
                             <Icon
-                              type="user"
+                              type="home"
                               style={{ color: "rgba(0,0,0,.25)" }}
                             />
                           }
                         />
                       )}
                     </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
-                      {this.fullNameFn(
-                        <Input
-                          prefix={
-                            <Icon
-                              type="user"
-                              style={{ color: "rgba(0,0,0,.25)" }}
-                            />
-                          }
-                        />
-                      )}
-                    </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
-                      {this.fullNameFn(
-                        <Input
-                          prefix={
-                            <Icon
-                              type="user"
-                              style={{ color: "rgba(0,0,0,.25)" }}
-                            />
-                          }
-                        />
-                      )}
-                    </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
-                      {this.fullNameFn(
-                        <Input
-                          prefix={
-                            <Icon
-                              type="user"
-                              style={{ color: "rgba(0,0,0,.25)" }}
-                            />
-                          }
-                        />
-                      )}
-                    </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
-                      {this.fullNameFn(
-                        <Input
-                          prefix={
-                            <Icon
-                              type="user"
-                              style={{ color: "rgba(0,0,0,.25)" }}
-                            />
-                          }
-                        />
-                      )}
-                    </Form.Item>
-                    <Form.Item {...formItemLayout} label="Email">
+                  </Col>
+                </Row>
+              </Panel>
+              <Panel
+                header={<strong>Family</strong>}
+                key="3"
+                style={customPanelStyle}
+              >
+                <Row>
+                  <Row>
+                    <Col span={12}>
+                      <Form.Item {...formItemLayout} label="Father">
+                        {this.fullNameFn(
+                          <Input
+                            prefix={
+                              <Icon
+                                type="user"
+                                style={{ color: "rgba(0,0,0,.25)" }}
+                              />
+                            }
+                          />
+                        )}
+                      </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                      <Form.Item {...formItemLayout} label="M">
+                        {this.fullNameFn(
+                          <Input
+                            prefix={
+                              <Icon
+                                type="user"
+                                style={{ color: "rgba(0,0,0,.25)" }}
+                              />
+                            }
+                          />
+                        )}
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Col span={12}></Col>
+                  <Col span={12}>
+                    <Form.Item {...formItemLayout} label="Address">
                       {this.fullNameFn(
                         <Input
                           prefix={

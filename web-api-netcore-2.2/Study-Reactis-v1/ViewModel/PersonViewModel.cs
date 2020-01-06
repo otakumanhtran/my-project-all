@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Study_Reactis_v1.Entites
+namespace Study_Reactis_v1.ViewModel
 {
-    public class Person
+    public class PersonViewModel
     {
-        [Key]
         public int PersonId { get; set; }
 
         public string FullName { get; set; }
 
         public DateTime? Birthday { get; set; }
 
-        public string  Gender  { get; set; }
+        public string Gender { get; set; }
 
         public string Email { get; set; }
 
@@ -24,5 +22,7 @@ namespace Study_Reactis_v1.Entites
         public string PhoneNumber { get; set; }
 
         public string Image { get; set; }
+
+        public int? jobId { get; set; }
     }
 }

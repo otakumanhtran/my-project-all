@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Study_Reactis_v1.Entites;
 
 namespace Study_Reactis_v1
@@ -42,6 +35,13 @@ namespace Study_Reactis_v1
                 });
             services.AddDbContext<DbStudyReactContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("StudyReactDb"))
             .EnableSensitiveDataLogging());
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddGoogle(options =>
+                {
+                    options.ClientId = "7576104169-oruguc3882fi8796ffsi8gmd9ts2hg9j.apps.googleusercontent.com";
+                    options.ClientSecret = "YQENRDmuzJv9x5hYipgFIWz-";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +62,7 @@ namespace Study_Reactis_v1
                 // all origins access.
                 // options => options.WithOrigins("*").AllowAnyMethod()
             );
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

@@ -10,6 +10,13 @@ const rootUrl = "https://localhost:44341/";
 const appSession = new Appsession();
 
 class RegistrationForm extends Component {
+
+  // async UNSAFE_componentWillMount()
+  // {
+  //   const reponse = await fetch('https://localhost:44341/api/People');
+  //   const myJson = await reponse.json();
+  //   console.log(JSON.stringify(myJson));
+  // }
   // #region START Function
   userNameFn = element =>
     this.props.form.getFieldDecorator("userName", {

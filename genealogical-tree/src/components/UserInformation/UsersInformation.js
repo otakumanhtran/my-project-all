@@ -16,7 +16,12 @@ class UsersInformation extends Component {
     confirmLoading: false
   };
 
-  UNSAFE_componentWillMount() {
+  async UNSAFE_componentWillMount() {
+
+    const response = await fetch('https://localhost:44341/api/People');
+
+    const mySon = await response.json();
+
     for (let i = 0; i < 15; i++) {
       listData.push({
         title: `Trần Đức Mạnh ${i}`,
@@ -29,7 +34,7 @@ class UsersInformation extends Component {
               đô thị Sông Đà.
             </p>
             <p>
-              <strong>Adress: </strong>Ngõ 142-Cổ Nhuế 2-Bắc Từ Liêm-Hà Nội
+              <strong>Address: </strong>Ngõ 142-Cổ Nhuế 2-Bắc Từ Liêm-Hà Nội
             </p>
             <div>
               <Button

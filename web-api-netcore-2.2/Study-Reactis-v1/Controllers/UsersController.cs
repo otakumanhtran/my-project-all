@@ -21,10 +21,15 @@ namespace Study_Reactis_v1.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public ActionResult<User> Login(User user)
+        public List<string> Login(User user)
         {
-            var userFromDb = _context.Users.FirstOrDefault( u => (u.UserName == user.UserName && u.Password == user.Password));
-            return userFromDb;
+            if(!ModelState.IsValid)
+            {
+                return this.ModelState.Keys
+                .SelectMany(key => ModelState[key].Errors.Select(error => error.ErrorMessage)).ToList();
+            }
+
+            return new List<string>();
         }
     }
 }
